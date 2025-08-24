@@ -49,10 +49,3 @@ const navLinks = document.getElementById("nav-links");
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
-
-// Tutup menu otomatis setelah klik salah satu link
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
-});
