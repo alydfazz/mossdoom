@@ -294,6 +294,23 @@ nav.scrolled {
   line-height: 1.4;
   font-size: 0.85rem;
 }
+@media (max-width: 768px) {
+  .card-image {
+    height: auto !important;
+    min-height: 180px;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    max-height: 300px;
+  }
+}
 /* === TESTIMONI === */
 #testimoni {
   text-align: center;
@@ -393,7 +410,7 @@ nav.scrolled {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 @media (max-width: 600px) {
-    .gallery {
+  .gallery {
     grid-template-columns: 1fr; 
     gap: 15px;
   }
