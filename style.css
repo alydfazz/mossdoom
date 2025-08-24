@@ -330,6 +330,8 @@ nav.scrolled {
 #testimoni {
   text-align: center;
   background: #fff5f7;
+  padding: 50px 0 40px; 
+  margin-bottom: 0; 
 }
 #testimoni h2 {
   font-size: 30px;
@@ -352,11 +354,6 @@ nav.scrolled {
   height: 4px;        
   background-color: #d17b88; 
   border-radius: 2px;
-}
-#testimoni {
-  text-align: center;
-  background: #fff5f7;
-  padding: 50px 0 60px; 
 }
 .testimoni-cards {
   display: flex;
@@ -453,10 +450,13 @@ nav.scrolled {
 }
 /* === KONTAK === */
 #kontak {
+  min-height:unset !important;
+  padding-top: 40px !important;
+  padding-bottom: 30px !important;
   text-align: center;
 }
 #kontak h2 {
-   margin-top: -3vh;
+  margin-top: -3vh;
   font-size: 30px;
   color: #d17b88;
 }
@@ -482,6 +482,21 @@ nav.scrolled {
   background: #1ebc57;
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+/* === FOOTER === */
+footer {
+  color: #666;
+  text-align: center;
+  padding: 20px 10px;
+  margin: 0;
+  border-top: 1px solid #eee; 
+}
+footer .footer-container p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+footer b {
+  color: #d17b88;
 }
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
