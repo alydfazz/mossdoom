@@ -93,19 +93,36 @@ nav.scrolled {
   transform: rotate(90deg);
 }
 @media (max-width: 768px) {
-/* ...existing code... */
-@media (max-width: 768px) {
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 5%;
+    z-index: 1002;
+  }
+  .logo {
+    order: 1;
+    flex: 0 0 auto;
+    z-index: 1002;
+    background: white;
+    padding: 4px 12px;
+    border-radius: 8px;
+  }
   .menu-toggle {
+    order: 2;
     display: block;
     position: absolute;
     right: 20px;
     top: 18px;
-    z-index: 1001;
-  }
-  nav {
-    position: relative;
+    z-index: 1003;
+    background: white;
+    border-radius: 50%;
+    padding: 2px 8px;
   }
   .nav-links {
+    order: 3;
     position: absolute;
     top: 60px;
     left: 0;
@@ -122,18 +139,6 @@ nav.scrolled {
   .nav-links.active {
     transform: translateY(0);
   }
-  .nav-links a {
-    margin: 10px 0;
-    text-align: center;
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    padding: 12px 0;
-  }
-  nav {
-    padding: 12px 5%;
-  }
-}
 }
 /* === HERO === */
 #beranda {
