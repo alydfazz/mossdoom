@@ -1,37 +1,22 @@
 // Animasi scroll muncul
-const sections = document.querySelectorAll("section");
-const cards = document.querySelectorAll(".card");
-const productGalleryCards = document.querySelectorAll(".product-gallery-grid .product-card");
-const galleryImages = document.querySelectorAll(".gallery img");
+const targets = document.querySelectorAll("section, .card, .product-card, .gallery img, .desc-text");
 const nav = document.querySelector("nav");
 
 const observerOptions = {
   root: null,
-  rootMargin: "0px",
-  threshold: 0.2
+  rootMargin: "0px", 
+  threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-sections.forEach(section => {
-  observer.observe(section);
-});
-cards.forEach(card => {
-  observer.observe(card);
-});
-productGalleryCards.forEach(card => {
-  observer.observe(card);
-});
-galleryImages.forEach(img => {
-  observer.observe(img);
-});
+targets.forEach(el => observer.observe(el));
 
 // Animasi navbar saat scroll
 window.addEventListener("scroll", () => {
@@ -48,4 +33,16 @@ const navLinks = document.getElementById("nav-links");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+});
+
+// Pastikan elemen sudah loaded sebelum menjalankan animasi
+document.addEventListener('DOMContentLoaded', function() {
+  // Trigger animasi untuk elemen yang sudah terlihat saat page load
+  const immediateTargets = document.querySelectorAll('.desc-text');
+  immediateTargets.forEach(target => {
+    const rect = target.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      target.classList.add('visible');
+    }
+  });
 });
